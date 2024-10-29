@@ -74,7 +74,7 @@ function addTask(task: Task) {
   const item = document.createElement('li');
   const span = document.createElement('span');
   const checkbox = document.createElement('input');
-  const button = document.createElement('button');
+  const delButton = document.createElement('button');
 
   checkbox.type = 'checkbox';
   checkbox.checked = completed;
@@ -84,10 +84,11 @@ function addTask(task: Task) {
     renderTasks();
   });
 
-  button.type = 'button';
-  button.textContent = 'Delete';
-  button.disabled = !checkbox.checked;
-  button.addEventListener('click', () => {
+  delButton.type = 'button';
+  delButton.textContent = 'Delete';
+  delButton.disabled = !checkbox.checked;
+
+  delButton.addEventListener('click', () => {
     tasks = tasks.filter(existedTask => existedTask.id !== id);
     saveTask(tasks);
     renderTasks();
@@ -95,7 +96,7 @@ function addTask(task: Task) {
 
   span.textContent = `${priority.toLocaleUpperCase()} | ${formatDate(createdAt)}`;
   label.append(checkbox, title);
-  item.append(label, span, button);
+  item.append(label, span, delButton);
   list.appendChild(item);
 }
 
