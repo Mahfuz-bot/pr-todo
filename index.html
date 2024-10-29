@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="./src/style.css" />
+      <title>TODO App</title>
+   </head>
+   <body class="bg-[#222]">
+      <div class="container">
+         <h1 class="mb-10 text-3xl font-bold tracking-wide">TODO App</h1>
+         <input type="search" class="text-black inputElement" id="search" />
+         <form action="" id="form">
+            <input type="text" id="inputForm" class="text-black inputElement" />
+            <select
+               name="task-priority"
+               id="task-priority"
+               class="text-black inputElement"
+            >
+               <option value="low">Low</option>
+               <option value="medium">Medium</option>
+               <option value="high">High</option>
+            </select>
+            <button type="submit" class="btn">Add Task</button>
+         </form>
+         <div class="filters">
+            <button class="btn" data-filter="all">All</button>
+            <button class="btn" data-filter="completed">Completed</button>
+            <button class="btn" data-filter="pending">Pending</button>
+         </div>
+         <ul id="todoList" class=""></ul>
+      </div>
+      <script type="module" src="/src/main.ts"></script>
+   </body>
+</html>

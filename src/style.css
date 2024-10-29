@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+   .container {
+      @apply mx-auto w-[500px] flex-col place-items-center mt-[200px] text-white rounded-3xl;
+   }
+   .btn {
+      @apply px-4 py-2 font-bold text-white rounded bg-slate-700 hover:bg-slate-900;
+   }
+   .inputElement {
+      @apply px-4 py-2 border-none rounded;
+   }
+   .filters {
+      @apply flex gap-4 mt-5 justify-self-end;
+   }
+   #todoList {
+      @apply mt-5 text-xl;
+   }
+}
+@layer base {
+   li {
+      @apply flex items-center justify-between w-full gap-20 p-2 mt-2 text-black bg-yellow-400;
+   }
+   label {
+      @apply flex gap-2;
+   }
+   ul {
+      @apply relative;
+   }
+   span {
+      @apply text-slate-600;
+   }
+   button {
+      @apply px-2 py-1 m-2 rounded bg-slate-100;
+   }
+}
